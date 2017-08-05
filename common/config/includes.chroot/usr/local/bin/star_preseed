@@ -13,6 +13,7 @@ dpkg --purge live-tools
 # remove autologin after install
 sed -i "s/autologin-user=starlive/# autologin-user=/g" /etc/lightdm/lightdm.conf
 sed -i "s/autologin-user-timeout=0/# autologin-user-timeout=0/g" /etc/lightdm/lightdm.conf
+sed -i "s/#session-setup-script=/session-setup-script=/usr/share/star/star-user-setup/g" /etc/lightdm/lightdm.conf
 
 # update grub
 sed -i "s/echo Debian/echo Star/g" /etc/default/grub

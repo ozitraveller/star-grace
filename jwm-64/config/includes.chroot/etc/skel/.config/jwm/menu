@@ -59,7 +59,6 @@
       </Menu>  
       <Menu icon="folder.png" label="Multimedia">
           <Program label="Mpv" confirm="false">x-media-player</Program>
-          <Program label="Pulseaudio Control" confirm="false">/usr/bin/pavucontrol</Program>
 		  <Program label="Xfburn" confirm="false">/usr/bin/xfburn</Program>
       </Menu>      
       <Menu icon="folder.png" label="Office">

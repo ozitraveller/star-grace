@@ -155,6 +155,8 @@ update(){
 	fi
 
 	cp -r /home/$SUDO_USER/${_SOURCE}/common/config/* ./
+	
+	cp ./includes.installer/preseed.cfg ./includes.binary/install/
 
 	cp -r /home/$SUDO_USER/${_SOURCE}/$1-64/config/hooks/* ./hooks/
 	cp -r /home/$SUDO_USER/${_SOURCE}/$1-64/config/includes.chroot/* ./includes.chroot/

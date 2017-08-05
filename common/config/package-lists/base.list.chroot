@@ -29,6 +29,7 @@ connman-ui
 
 xfce4-power-manager
 
+acpi
 pm-utils
 xdg-user-dirs
 xdg-utils
@@ -148,3 +149,5 @@ iw
 lsb-release
 
 apt-listchanges
+
+python-xdg

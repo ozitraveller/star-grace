@@ -1,7 +1,7 @@
 #!/bin/bash
 #Star User Set-up
 
-set -e
+# set -e
 
 if [ ! -d "/home/$USER/.config/star" ]; then
 	mkdir /home/$USER/.config/star
@@ -17,10 +17,10 @@ if [ ! -f "/home/$USER/.config/star/star-setup" ]; then
     #rm skel.tar.gz
 
     if [ -f "/home/$USER/.gtkrc-2.0" ]; then
-        rpl -q 'REPLACEME' $USER /home/$USER/.gtkrc-2.0 > /dev/null 2>&1
+        sed -i "s/REPLACEME/${USER}/g" /home/$USER/.gtkrc-2.0 > /dev/null 2>&1
     fi
     if [ -f "/home/$USER/.mozilla/firefox/cpffssvb.default/prefs.js" ]; then
-        rpl -q 'REPLACEME' $USER /home/$USER/.mozilla/firefox/cpffssvb.default/prefs.js > /dev/null 2>&1
+        sed -i "s/REPLACEME/${USER}/g" /home/$USER/.mozilla/firefox/cpffssvb.default/prefs.js > /dev/null 2>&1
     fi
     
     ln -s /usr/share/backgrounds /home/$USER/images/wallpapers/shared
