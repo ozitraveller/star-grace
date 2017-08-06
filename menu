@@ -8,14 +8,15 @@ _VERSION='9.1'
 _SOURCE='star-grace'
 
 _FLAVOURS=""
-_NAME="star-grace"
+_NAME="star-grace-${_VERSION}"
 # ${_VERSION}
 _SETS="official"
-_SUFFIX="$(date "+%Y%^b%d")"
+# _SUFFIX="$(date "+%Y%^b%d")"
+_SUFFIX="live"
 
 _TAG=""
 
-_ARCHITECTURE="64" #"$(dpkg --print-architecture)"
+_ARCHITECTURE="$(dpkg --print-architecture)"
  
 pause(){
   read -p "Press [Enter] key to continue..." fackEnterKey
@@ -54,9 +55,9 @@ build(){
 	
 	rm -f *.iso
 	
-	#sudo x-terminal-emulator -e './build'
+	sudo x-terminal-emulator -e './build'
 	# sudo xfce4-terminal -e './build'
-	./build
+	# ./build
 	
 	if [ -f "live-image-amd64.hybrid.iso" ]; then
 		mv live-image-amd64.hybrid.iso  ${_NAME}-$1-${_ARCHITECTURE}-${_SUFFIX}.iso
@@ -149,7 +150,8 @@ update(){
 	rm -rf ./binary_debian-installer
 	rm -rf ./bootloaders/*
 	rm -rf ./includes.binary/*
-
+	rm -rf ./packages.chroot/* 
+	
 	if [ ! -d "./includes.binary/install" ]; then
 		mkdir ./includes.binary/install
 	fi
